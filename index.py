@@ -19,7 +19,7 @@ def process_file(file):
     files = {'file_': file}
     response = requests.post(url, files=files)
     if response.status_code == 200:
-        return json.loads(response.json()['textResult'])
+        return str(json.loads(response.json()['textResult']))
     else:
         return "Unable to Process"
 
